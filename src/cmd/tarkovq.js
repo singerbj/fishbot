@@ -10,7 +10,7 @@ module.exports = {
     trigger: Util.cmdTriggerSymbol + "tarkovq",
     description: "Get a DM when tarkov is booted after waiting in the queue. (Requires the activity status to be on in Discord settings.)",
     usage: Util.cmdTriggerSymbol + "tarkovq { on | off | specify nothing to check your subscription status }",
-    func: async (message, cmdModules, cmdTriggers, client, audioAssets, audioTriggers, db) => {
+    func: async (message, cmdModules, cmdTriggers, client) => {
         const senderId = message.author.id;
         let guildToUse = message.guild;
         if(!guildToUse){

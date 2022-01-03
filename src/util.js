@@ -1,8 +1,5 @@
 module.exports = {
-    gooseUserId: process.env.GOOSE_USER || "220342752326451201",
-    // gooseUserId: "324721672986951691", //DJK0SH3R's id for development, keep commented out for prod
     cmdTriggerSymbol: "!",
-    apexAPIkey: "YIvaaJDwbOEjVsdNz4zt",
     rand: function(min, max) {
         min = Math.ceil(min);
         max = Math.floor(max);

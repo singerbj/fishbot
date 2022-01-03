@@ -6,11 +6,6 @@ module.exports = {
     usage: Util.cmdTriggerSymbol + "help",
     func: (message, cmdModules, cmdTriggers, client, audioAssets, audioTriggers) => {
         let filteredCmdTriggers = cmdTriggers;
-        if(message.author.id !== Util.gooseUserId){
-            filteredCmdTriggers = cmdTriggers.filter((cmdTrigger) => {
-                return cmdModules[cmdTrigger].trigger && cmdModules[cmdTrigger].hidden !== true;
-            });
-        }
         let commandArray = filteredCmdTriggers.map((cmdTrigger) => {
             return "`" + cmdModules[cmdTrigger].usage + "`\t\t" + cmdModules[cmdTrigger].description;
         });

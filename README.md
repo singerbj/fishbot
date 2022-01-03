@@ -16,4 +16,4 @@ To run in a development environment, run "npm run start"
 
 # Contribute
 
-Talk to Goose if you want to contribute.
+Talk to dj if you want to contribute.

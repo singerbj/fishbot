@@ -4,13 +4,12 @@
   "description": "TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project.",
   "main": "index.js",
   "scripts": {
-    "start-azure": "npm install; npm run start",
     "start": "npm-run-all -p start-fishbot",
     "start-fishbot": "node index.js",
     "requirements-check": "node checkVersion.js",
     "postinstall": "npm run requirements-check",
     "deploy": "ssh pi@192.168.181.236 'source ~/.profile && cd fishbot && npm run restart'",
-    "restart": "forever stopall; git pull; npm install; npm run dashboard-prod; forever start index.js;"
+    "restart": "forever stopall; git pull; npm install; forever start index.js;"
   },
   "engines": {
     "node": ">=14.0.0 <15.0.0"

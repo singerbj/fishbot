@@ -27,19 +27,19 @@ module.exports = {
                 if(guildToUse){
                     if (newAlertsSetting === "on") {
                         localstorage.setItem(senderId, "on");
-                        return "You are now subscribed to stream alerts for the members of Goosecord.";
+                        return "You are now going to get notifications when Escape from Tarkov starts.";
                     } else {
                         localstorage.setItem(senderId, "off");
-                        return "You are no longer subscribed to stream alerts for the members of Goosecord.";
+                        return "You are no longer going to get notifications when Escape from Tarkov starts.";
                     }
                 } else {
                     return "You need to be in a server with Fishbot to use this command.";
                 }
             } else {
-                return "Invalid alerts setting specified. Please use either \"on\" or \"off\".";
+                return "Invalid tarkovq setting specified. Please use either \"on\" or \"off\".";
             }
         } else {
-            return "You are" + (currentAlertsSetting === "on" ? " " : " not ") + "currently recieving stream alerts for the members of Goosecord.";
+            return "You are" + (currentAlertsSetting === "on" ? " " : " not ") + "currently receiving notifications when Escape from Tarkov starts.";
         }
     },
     runEvery10Seconds: async (client) => {

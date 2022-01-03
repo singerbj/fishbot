@@ -47,8 +47,8 @@ module.exports = {
         let now = Date.now();
         client.guilds.cache.forEach((guild) => {
             guild.members.cache.forEach((member) => {
-                console.log('processing: ' + member.user.username);
                 const activity = member.presence.activities && member.presence.activities[0] && member.presence.activities[0].name;
+                console.log('processing: ' + member.user.username + ' is playing: ' + activity || '<n/a>');
                 if(activity && activity.toLowerCase().indexOf('tarkov') > -1){
                     if((!lastPlayingTarkov[member.user.username] || (now - lastPlayingTarkov[member.user.username]) > 300000) && localstorage.getItem(member.id) === 'on'){
                         console.log('messaging: ' + member.user.username);

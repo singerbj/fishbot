@@ -8,8 +8,8 @@
     "start-fishbot": "node index.js",
     "requirements-check": "node checkVersion.js",
     "postinstall": "npm run requirements-check",
-    "deploy": "ssh pi@192.168.181.236 'source ~/.profile && cd fishbot && npm run restart'",
-    "restart": "forever stopall; git pull; npm install; forever start index.js;"
+    "deploy": "ssh pi@192.168.181.236 '/bin/bash -i -c \"source ~/.profile && cd fishbot && yarn restart\"'",
+    "restart": "nvm use 14; forever stop fishbot; git pull; yarn; forever start --uid \"fishbot\" index.js;"
   },
   "engines": {
     "node": ">=14.0.0 <15.0.0"

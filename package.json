@@ -9,7 +9,7 @@
     "requirements-check": "node checkVersion.js",
     "postinstall": "npm run requirements-check",
     "deploy": "ssh pi@192.168.181.236 '/bin/bash -i -c \"source ~/.profile && cd fishbot && yarn restart\"'",
-    "restart": "forever stop fishbot; git pull && yarn && forever start --uid \"fishbot\" index.js;"
+    "restart": "forever stop fishbot; git pull && yarn && forever start -a --uid \"fishbot\" index.js;"
   },
   "engines": {
     "node": ">=14.0.0 <15.0.0"
